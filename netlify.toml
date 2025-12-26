@@ -1,0 +1,16 @@
+[build]
+  # Directory to deploy to production
+  publish = "build"
+  
+  # Build command
+  command = "npm run build"
+
+# Redirect rules for single page applications
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables (if needed)
+[build.environment]
+  NODE_VERSION = "18"
