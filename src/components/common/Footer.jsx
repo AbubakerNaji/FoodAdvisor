@@ -35,9 +35,9 @@ const Footer = () => {
                     <div className="footer-section">
                         <h5>تواصل معنا</h5>
                         <ul className="footer-links">
-                            <li><a href="#">فيسبوك</a></li>
-                            <li><a href="#">إنستجرام</a></li>
-                            <li><a href="#">تويتر</a></li>
+                            <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">فيسبوك</a></li>
+                            <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">إنستجرام</a></li>
+                            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">تويتر</a></li>
                         </ul>
                     </div>
                 </div>
