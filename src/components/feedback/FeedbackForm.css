@@ -1,0 +1,209 @@
+/* FeedbackForm.css - Premium styling for feedback form */
+
+.feedback-form-container {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(255, 255, 255, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.form-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary, #1a1a1a);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-title .icon {
+    font-size: 1.8rem;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+    text-align: right;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    background: white;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    direction: rtl;
+    text-align: right;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.char-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #666);
+    text-align: left;
+}
+
+/* Star Rating Selector */
+.star-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.star-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0.25rem;
+    color: #d1d5db;
+    filter: grayscale(100%);
+}
+
+.star-btn:hover,
+.star-btn.active {
+    transform: scale(1.2);
+    filter: grayscale(0%) drop-shadow(0 2px 8px rgba(245, 158, 11, 0.5));
+    color: #f59e0b;
+}
+
+.star-btn.active {
+    animation: starPop 0.3s ease;
+}
+
+@keyframes starPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.rating-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f59e0b;
+    margin-right: auto;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn .btn-icon {
+    font-size: 1.3rem;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .feedback-form-container {
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(30, 30, 30, 0.95) 100%);
+        border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .form-title {
+        color: var(--text-primary, #f5f5f5);
+    }
+
+    .form-group label {
+        color: var(--text-primary, #e5e5e5);
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--text-primary, #f5f5f5);
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group textarea:focus {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: #a78bfa;
+        box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.15);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .feedback-form-container {
+        padding: 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.4rem;
+    }
+
+    .star-btn {
+        font-size: 1.6rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+        padding: 0.875rem 1.5rem;
+    }
+}

@@ -1,0 +1,186 @@
+/* SearchFilter Styles - إصلاح مشكلة النص العربي */
+
+/* ===============================================
+   FILTER CONTAINER
+   =============================================== */
+.search-filter {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: 0 4px 15px rgba(255, 107, 44, 0.08);
+    margin-bottom: 2.5rem;
+    border: 2px solid rgba(255, 107, 44, 0.1);
+}
+
+.dark-mode .search-filter {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+/* ===============================================
+   FILTER HEADER
+   =============================================== */
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #F7FAFC;
+}
+
+.dark-mode .filter-header {
+    border-bottom-color: var(--border-color);
+}
+
+.filter-header h3 {
+    font-family: 'Playfair Display', serif;
+    color: #2D3748;
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dark-mode .filter-header h3 {
+    color: var(--text-primary);
+}
+
+.btn-clear {
+    padding: 0.5rem 1.25rem;
+    background: transparent;
+    border: 2px solid #E2E8F0;
+    border-radius: 9999px;
+    color: #718096;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-clear:hover {
+    background: #F7FAFC;
+    border-color: #FF6B2C;
+    color: #FF6B2C;
+}
+
+.dark-mode .btn-clear {
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+.dark-mode .btn-clear:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--primary-light);
+    color: var(--primary-light);
+}
+
+/* ===============================================
+   FILTERS GRID
+   =============================================== */
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4A5568;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dark-mode .filter-label {
+    color: var(--text-secondary);
+}
+
+/* ===============================================
+   SELECT - إصلاح النص العربي
+   =============================================== */
+.filter-select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    padding-left: 2.5rem;
+    font-size: 1rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #2D3748;
+    background-color: #F7FAFC;
+    border: 2px solid #E2E8F0;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    direction: rtl;
+    text-align: right;
+}
+
+.filter-select:hover {
+    background-color: white;
+    border-color: #CBD5E0;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #FF6B2C;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 107, 44, 0.1);
+}
+
+/* Dark mode للـ select */
+.dark-mode .filter-select {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.dark-mode .filter-select:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color-hover);
+}
+
+.dark-mode .filter-select:focus {
+    background-color: var(--bg-secondary);
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(255, 168, 112, 0.2);
+}
+
+/* Options - إصلاح النص */
+.filter-select option {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 0.5rem;
+    background-color: white;
+    color: #2D3748;
+    direction: rtl;
+}
+
+.dark-mode .filter-select option {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* ===============================================
+   RESPONSIVE
+   =============================================== */
+@media (max-width: 768px) {
+    .filter-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .filters-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .search-filter {
+        padding: 1.25rem;
+    }
+}
