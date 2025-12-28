@@ -1,14 +1,3 @@
-/**
- * RestaurantPage Component - صفحة تفاصيل المطعم
- * 
- * تعرض جميع تفاصيل المطعم:
- * - الصورة الكبيرة
- * - المعلومات (التقييم، الفئة، السعر، الموقع)
- * - ساعات العمل
- * - الوصف
- * - زر Google Maps
- * - نظام التقييمات والمراجعات
- */
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -23,11 +12,10 @@ const RestaurantPage = () => {
   const { id } = useParams(); // جلب معرّف المطعم من الرابط
   const navigate = useNavigate();
 
-  // State for thank you message
   const [showThankYou, setShowThankYou] = useState(false);
   const [feedbackKey, setFeedbackKey] = useState(0); // To force FeedbackList re-render
 
-  // البحث عن المطعم في البيانات المحلية
+
   const restaurant = restaurants.find(r => r.id === parseInt(id));
 
   // دائماً نبدأ الصفحة من الأعلى عند فتح صفحة المطعم

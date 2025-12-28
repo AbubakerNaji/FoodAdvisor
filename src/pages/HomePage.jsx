@@ -112,7 +112,7 @@ const HomePage = () => {
                         </h2>
                     </div>
 
-                    {/* شبكة المطاعم */}
+
                     {filteredRestaurants.length > 0 ? (
                         <div className="restaurants-grid">
                             {filteredRestaurants.map((restaurant) => (

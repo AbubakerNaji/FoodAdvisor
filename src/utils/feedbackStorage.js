@@ -47,7 +47,7 @@ export const saveRestaurantFeedback = (restaurantId, feedback) => {
             rating: feedback.rating,
             comment: feedback.comment,
             date: new Date().toISOString().split('T')[0], // التاريخ بصيغة: YYYY-MM-DD
-            isUserReview: true // علامة إن ده تقييم من المستخدم (مش من الداتا الأصلية)
+            isUserReview: true // علامة إن تقييم من المستخدم (مش من الداتا الأصلية)
         };
 
         // نحط التقييم الجديد في أول القائمة (عشان يظهر أول حاجة)
@@ -59,21 +59,12 @@ export const saveRestaurantFeedback = (restaurantId, feedback) => {
         // نحفظ كل حاجة في localStorage
         localStorage.setItem(STORAGE_KEY, JSON.stringify(allFeedbacks));
 
-        return true; // نجحنا!
+        return true;
     } catch (error) {
         console.error('مشكلة في حفظ التقييم:', error);
         return false;
     }
 };
 
-// دالة بتمسح كل التقييمات (للاختبار بس)
-// مش بنستخدمها في التطبيق، بس ممكن تكون مفيدة للتجربة
-export const clearAllFeedbacks = () => {
-    try {
-        localStorage.removeItem(STORAGE_KEY);
-        return true;
-    } catch (error) {
-        console.error('مشكلة في مسح التقييمات:', error);
-        return false;
-    }
-};
+
+;
